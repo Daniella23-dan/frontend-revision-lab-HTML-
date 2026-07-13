@@ -1,0 +1,286 @@
+:root {
+--background-color: #ffffff;
+--surface-color: #f4f6f8;
+--text-color: #1a1a1a;
+--text: muted #666666;
+--primary-color: #2563eb;
+--primary-hover: #1d4ed8;
+--border-color: #e5e7eb;
+--card-shadow: 0 4px 6px-1px rgba(0,0,0,0.1);
+--transition: all 0.3s ease;
+
+}
+
+
+/*Dark Mode Class Swap Target*/
+
+body.dark-mode {
+
+    --background-color: #0f172a;
+    --surface-color: #1e293b;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --border-color:#334155;
+    --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
+
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins' sans-serif;
+}
+
+
+body {
+
+    background: #080808;
+    color: #fff;
+}
+
+
+#header {
+width: 100%;
+height: 100%;
+
+}
+
+.container {
+
+    padding: 10px 10%;
+}
+
+.about {
+    padding: 80px 0px;
+    color: #ababab;
+    padding-left: 100px;
+}
+
+
+.btn:hover {
+
+    background-color: var(--primary-hover);
+    
+    transform: translateY(-2px);
+
+
+}
+
+
+
+ 
+
+.project-card {
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+/* Navigation bar layout */
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Logo on left, links on right */
+  align-items: center;            /* Perfectly centers text vertically */
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: black;
+}
+
+/* Link list container layout */
+.nav-links {
+  display: flex;                  /* Arranges list items horizontally */
+  gap: 20px;                      /* Clean spacing between link items */
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* space out the rows inside  the form*/
+.form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+.form-group {
+    margin-bottom: 20px;
+    display:block;
+}
+
+.form-label {
+
+    margin-bottom: 2opx;
+    display:block;
+}
+
+
+
+.projects-card{
+  display: flex;
+  flex-wrap: wrap;       /* Allows cards to wrap into columns on mobile */
+  gap: 24px;             /* Equal spacing around all cards */
+  padding: 2rem;
+}
+
+.project-card {
+  /* grow | shrink | basis (minimum ideal width) */
+  flex: 1 1 300px;       
+  
+  /* Internal Flexbox layout to align card text content nicely */
+  display: flex;
+  flex-direction: column; 
+  gap: 10px;
+  
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+ /* Optional: Keep flexbox INSIDE the card to stack content vertically */
+ 
+ .flexbox {
+ display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+/* ==========================================================================
+   1. MOBILE DESIGN (Default styles for screens up to 480px wide)
+   ========================================================================== */
+.navbar {
+  display: flex;
+  flex-direction: column;    /* Stacks logo above navigation links on mobile */
+  align-items: center;
+  gap: 15px;
+  padding: 1rem;
+  background-color: #333;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;    /* Stack links vertically on small mobile screens */
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Force exactly 1 single full-width column */
+  gap: 16px;
+  padding: 1rem;
+}
+
+.project-card {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+
+/* ==========================================================================
+   2. TABLET BREAKPOINT (Screens 481px to 768px wide)
+   ========================================================================== */
+@media (min-width: 481px) {
+  .navbar {
+    flex-direction: row;       /* Flips logo and links into a side-by-side row */
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    flex-direction: row;       /* Lines up links horizontally */
+    gap: 15px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Locks layout into a 2-column grid */
+    gap: 20px;
+    padding: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   1. DEFAULT LINK & BUTTON STATES (With Transition Engines)
+   ========================================================================== */
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  
+  /* Smoothly animates color shifts over 0.2 seconds */
+  transition: color 0.2s ease-in-out; 
+}
+
+/* Base button styling (Add this class to your project or CTA buttons) */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+
+  /* Animates multiple properties smoothly at the same time */
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+/* ==========================================================================
+   2. HOVER EFFECTS
+
+/* Subtle color fade for menu items */
+.nav-links a:hover {
+  color: #0070f3; /* Changes text to a distinct brand color on hover */
+}
+
+/* Dynamic lifting effect for action buttons */
+.btn-primary:hover {
+  background-color: #0051a8;       /* Darkens the background color */
+  transform: translateY(-2px);     /* Physically lifts the button up slightly */
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3); /* Adds a modern glow shadow */
+}
+
+/* Reset lifting effect when clicked */
+.btn-primary:active {
+  transform: translateY(0);        /* Pushes the button back down on click */
+  box-shadow: 0 2px 6px rgba(0, 112, 243, 0.2);
+}
+
+
+/* Subtle color fade for menu items */
+.nav-links a:hover {
+  color: var(--primary-color); /* Changes text to a distinct brand color on hover */
+}
+
+/* Dynamic lifting effect for action buttons */
+.btn-primary:hover {
+  background-color: #0051a8;       /* Darkens the background color */
+  transform: translateY(-2px);     /* Physically lifts the button up slightly */
+  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3); /* Adds a modern glow shadow */
+}
+
+/* Reset lifting effect when clicked */
+.btn-primary:active {
+  transform: translateY(0);        /* Pushes the button back down on click */
+  box-shadow: 0 2px 6px rgba(0, 112, 243, 0.2);
+}
+
+
+
+
+
+

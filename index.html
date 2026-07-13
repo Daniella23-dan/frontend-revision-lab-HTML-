@@ -11,8 +11,8 @@
 
 <body>
 <header>
-<nav>
-    <ul>
+<nav class="navbar">
+    <ul class="nav-links">
         <li>
             <a href="#hero">Home</a>
             
@@ -28,12 +28,15 @@
         </li>
     </ul>
 </nav>
+
+
 </header>
-<img src="image2.jpeg" alt="Nature is so beautiful>
+<img src="image2.jpeg" alt="Nature is so beautiful">
 
 <main>
-<nav>
-    <section class="hero">
+
+    <nav>
+<section class="hero">
 
         <h1>Hi,i'm Daniella a Web Developer.</h1>
 
@@ -49,8 +52,8 @@
 
 
 <nav>
-    <section class="about">
-        <h2>About Me</h2>
+    <section class about="about">
+              <h2>About Me</h2>
 
         <p>I'm a front-end developer based in Cameroon with a deep interest in the craft of building web interfaces</p>
 		<p>Outside of work i'm usually experimenting with generative visuals, contributing to open source tooling</p>
@@ -59,22 +62,50 @@
 		
     </section>
 </nav>
-    <section class="projects">
+             <section class="projects">
 
-        <h2>My Projects</h2>
+                 <h2>My Projects</h2>
 
         <article>
 
             <h3>Project Titile</h3>
             <P>Learning how to build a full time running project</P>
         </article>
+       
+        <div class="projects-grid">
+ 
+        
+          
+            <div class="project-card">
+
+    <h3>Project One</h3>
+
+    <p>A cool web application built using modern CSS.</p>
+
+  </div>
+
+  <div class="project-card">
+
+
+    <h3>Project Two</h3>
+
+
+    <p>An e-commerce storefront with functional cart features.</p>
+  </div> 
+
+  <div class="project-card">
+    <h3>Project Three</h3>
+    <p>A real-time weather application using third-party APIs.</p>
+  </div>
+</div>
     </section>
 
-    <section class="contact">
+    <section class contact="contact">
         <h2>Contact Me</h2>
-        <form action="#"method="POST">
+        
+        <form class form="#"method="POST">
 
-<div>
+<div class="form-group">
     <label for="name">Name</label>
 
     <input type="text" id="name" name="name"required>
@@ -83,20 +114,26 @@
 
 
 
+
+
+
 <a>
 
     <label for="email">Email</label>
 
 </a>
+
+
+
     <input type="email" id="email"name="email" required>
-</div>
 
 
 <div>
 
     <a>
 
-        <label for="Message">Message</label>
+    
+        <label class="form-label"for="Message">Message</label>
         <textarea id="Message" name="message" cols "30" rows="5"  placeholder="type here"></textarea>
         <input type="submit" value="Send Message" class="btn">
     </a>
@@ -111,12 +148,16 @@
 </main>
 
 
-<footer>
+<footer class footer="footer">
 
     <p>&copy; 2026 Daniela. All rights reserved.</p>
 </footer>
-    
+  
+
+
 <script src="js/script.js"></script>
+
+
 </body>
 </html>
 		

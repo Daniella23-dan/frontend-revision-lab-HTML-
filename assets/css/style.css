@@ -10,18 +10,23 @@
 --transition: all 0.3s ease;
 
 }
-
+ body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  transition: var(--background-color) 0.3s ease, var(--text-color) 0.3s ease;
+ }
 
 /*Dark Mode Class Swap Target*/
 
 body.dark-mode {
 
-    --background-color: #0f172a;
+    --background-color: #1a1a1a;
     --surface-color: #1e293b;
     --text-color: #f8fafc;
     --text-muted: #94a3b8;
     --border-color:#334155;
     --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
+    color: #ffffff;
 
     
 }
@@ -110,8 +115,32 @@ height: 100%;
     gap: 20px;
 }
 
+.humburger btn {        /*Hamburger menu button for mobile view*/
+
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* For small screens*/
+
+.humburger btn {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
 
+/* show menu when active*/
+
+.nav-links.active {
+  display: flex;
+}
 .form-group {
     margin-bottom: 20px;
     display:block;

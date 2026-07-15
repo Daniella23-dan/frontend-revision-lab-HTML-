@@ -12,6 +12,21 @@
 <body>
 <header>
 <nav class="navbar">
+
+    <button class="hamburger-btn" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+
+        <svg viewBox="0 0 24 24"
+        width="24" height="24">
+
+        <path fill="currentColor" d="M3,6H21V8H3V6M3, 11H21V13HV11M3, 16H21V18H3V16Z"/>
+    
+    </svg>
+
+    <button class="theme-toggle">Toggle Theme</button>
+    
+    </button>
+
+    
     <ul class="nav-links">
         <li>
             <a href="#hero">Home</a>
@@ -119,7 +134,7 @@
 
 <a>
 
-    <label for="email">Email</label>
+    <label class="email">Email</label>
 
 </a>
 
@@ -130,11 +145,13 @@
 
 <div>
 
+
+    
     <a>
 
     
         <label class="form-label"for="Message">Message</label>
-        <textarea id="Message" name="message" cols "30" rows="5"  placeholder="type here"></textarea>
+        <textarea id="Message" name="message" cols "35" rows="15"  placeholder="type here"></textarea>
         <input type="submit" value="Send Message" class="btn">
     </a>
 </div>

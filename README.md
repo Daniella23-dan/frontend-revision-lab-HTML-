@@ -10,6 +10,45 @@
 # Gives you a proper introduction about about the individual.
 # A brief idea on what the person does and their work.
 
+
+
+# Frontend Revision Lab
+
+A four-day sprint project rebuilding a personal portfolio with HTML, CSS, and JavaScript, focused on semantic structure, modern layout techniques, and interactive functionality.
+
+## Day 1 — Structure ✅
+
+Built a complete semantic HTML skeleton.
+
+- `<nav>` with hamburger menu and navigation links
+- Hero `<section>`
+- About `<section>`
+- Projects `<section>` with project cards
+- Contact `<section>` with a form (name, email, message fields)
+- Organized folder structure: `/assets/css`, `/js`
+
+## Day 2 — Styling ✅
+
+Styled the portfolio using modern CSS layout tools.
+
+- Flexbox used for the navbar and project cards
+- CSS Grid used for the projects section layout
+- Responsive breakpoints at 481px (tablet) and 769px (desktop)
+- Hover effects on navigation links and buttons
+- **Bonus:** Dark mode toggle via `body.dark-mode` class swap
+
+## Day 3 — JavaScript ✅
+
+Added interactivity and DOM manipulation.
+
+- **Mobile menu:** hamburger icon opens/closes navigation with slide-in animation
+- **Theme switcher:** button toggles dark mode on/off
+- **Form validation:** checks name, email, and message fields; shows inline error messages in the DOM (no `alert()`)
+- **Dynamic greeting:** displays "Good morning / afternoon / evening" in the hero based on current time
+- **Bonus:** theme preference saved via `localStorage` and persists on refresh
+
+## Folder Structure
+
 ## Feattures Completed 
 # A log of the work was done each day:
 -**Day 1:** [ Draw a proper structure for the project with clear coding techniques]

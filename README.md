@@ -39,4 +39,19 @@ Step-by-step guide on how to clone and run this project locally using HTTPS:
       Create a `.env` file in the root directory and add the following keys:
       - `touch .env`
      
+# Frontend Revision Lab
 
+## Day 1 — Structure 
+Semantic HTML with nav, hero, about, projects, and contact sections.
+
+## Day 2 — Styling 
+Flexbox navbar, CSS Grid projects layout, responsive breakpoints (481px, 769px), hover effects, dark mode class swap.
+
+## Day 3 — JavaScript 
+- Mobile hamburger menu
+- Theme switcher (persists via localStorage)
+- Dynamic time-based greeting
+- Form validation with DOM error messages (no alert())
+
+## How to run
+Open `index.html` in a browser.

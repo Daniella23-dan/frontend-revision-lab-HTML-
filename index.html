@@ -4,177 +4,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 <header>
+<div class="menu-overlay" id="menu-overlay"></div>
+
 <nav class="navbar">
-
-    <button class="hamburger-btn" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
-
-        <svg viewBox="0 0 24 24"
-        width="24" height="24">
-
-        <path fill="currentColor" d="M3,6H21V8H3V6M3, 11H21V13HV11M3, 16H21V18H3V16Z"/>
-    
-    </svg>
-
-    <button class="theme-toggle">Toggle Theme</button>
-    
+    <button class="hamburger" id="hamburger" aria-label="Open Menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
     </button>
 
-    
-    <ul class="nav-links">
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Project</a></li>
+        <li><a href="#contact">Contact</a></li>
+
+
         <li>
-            <a href="#hero">Home</a>
-            
-        </li>
-        <li>
-            <a href="#about">About</a>
-        </li>
-        <li>
-            <a href="#projects">Project</a>
-        </li>
-        <li>
-            <a href="#contact">Contact</a>
+
+            <button id="theme-toggle-btn" class="btn" type="button">Dark Mode</button>
         </li>
     </ul>
 </nav>
-
-
 </header>
+
 <img src="image2.jpeg" alt="Nature is so beautiful">
 
 <main>
 
-    <nav>
-<section class="hero">
+<section class="hero" id="hero">
+    <h1>Hi, i'm Daniella a Web Developer.</h1>
 
-        <h1>Hi,i'm Daniella a Web Developer.</h1>
+    <p id="dynamic-greeting"></p>
+
+    <p>I build clean, functional, and user-friendly web applications.</p>
+    <p>While still undergoing training, i try to practice and perfect my skills daily.</p>
+    <a href="#projects">View My Work</a>
+</section>
+
+<section class="about" id="about">
+    <h2>About Me</h2>
+    <p>I'm a front-end developer based in Cameroon with a deep interest in the craft of building web interfaces</p>
+    <p>Outside of work i'm usually experimenting with generative visuals, contributing to open source tooling</p>
+    <p>My love for the tech world keeps me going, willing to study more to perfect my skills.</p>
+</section>
+
+<section class="projects" id="projects">
+    <h2>My Projects</h2>
+
+    <article>
+        <h3>Project Title</h3>
+        <p>Learning how to build a full time running project</p>
+    </article>
+
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>Project One</h3>
+            <p>A cool web application built using modern CSS.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project Two</h3>
+            <p>An e-commerce storefront with functional cart features.</p>
+        </div>
+
+        <div class="project-card">
+            <h3>Project Three</h3>
+            <p>A real-time weather application using third-party APIs.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact" id="contact">
+    <h2>Contact Me</h2>
+
+    <form class="contact-form" action="#" method="POST">
 
 
-        <p>I build clean, functional, and user-friendly web applications.</p>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
 
-        <P>While still undergoing training, i try to practice and perfect my skills daily.</P>
+            <span id="name-error" class="error-message"></span>
 
-        <a href="#projects">View My Work</a>
+        </div>
 
-    </section>
-</nav>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
 
+            <span id="email-error" class="error-message"></span>
 
-<nav>
-    <section class about="about">
-              <h2>About Me</h2>
+        </div>
 
-        <p>I'm a front-end developer based in Cameroon with a deep interest in the craft of building web interfaces</p>
-		<p>Outside of work i'm usually experimenting with generative visuals, contributing to open source tooling</p>
+        <div class="form-group">
+            <label for="Message">Message</label>
+            <textarea id="Message" name="message" close="35" row="15" placeholder="type here"></textarea>
+            <span id="Message-error" class="error-message"></span>
+        </div>
 
-        <p>My love for the tech world keeps me going , willing to study more to perfect my skills.</p>
-		
-    </section>
-</nav>
-             <section class="projects">
-
-                 <h2>My Projects</h2>
-
-        <article>
-
-            <h3>Project Titile</h3>
-            <P>Learning how to build a full time running project</P>
-        </article>
-       
-        <div class="projects-grid">
- 
         
-          
-            <div class="project-card">
-
-    <h3>Project One</h3>
-
-    <p>A cool web application built using modern CSS.</p>
-
-  </div>
-
-  <div class="project-card">
-
-
-    <h3>Project Two</h3>
-
-
-    <p>An e-commerce storefront with functional cart features.</p>
-  </div> 
-
-  <div class="project-card">
-    <h3>Project Three</h3>
-    <p>A real-time weather application using third-party APIs.</p>
-  </div>
-</div>
-    </section>
-
-    <section class contact="contact">
-        <h2>Contact Me</h2>
-        
-        <form class form="#"method="POST">
-
-<div class="form-group">
-    <label for="name">Name</label>
-
-    <input type="text" id="name" name="name"required>
-
-</div>
-
-
-
-
-
-
-<a>
-
-    <label class="email">Email</label>
-
-</a>
-
-
-
-    <input type="email" id="email"name="email" required>
-
-
-<div>
-
-
-    
-    <a>
-
-    
-        <label class="form-label"for="Message">Message</label>
-        <textarea id="Message" name="message" cols "35" rows="15"  placeholder="type here"></textarea>
         <input type="submit" value="Send Message" class="btn">
-    </a>
-</div>
 
+        <p class="form-success-message"></p>
 
-        </form>
-
-        
-    </section>
+    </form>
+</section>
 
 </main>
 
-
-<footer class footer="footer">
-
+<footer class="footer">
     <p>&copy; 2026 Daniela. All rights reserved.</p>
 </footer>
-  
 
-
-<script src="js/script.js"></script>
-
+<script src="script.js"></script>
 
 </body>
-</html>
-		
+</html

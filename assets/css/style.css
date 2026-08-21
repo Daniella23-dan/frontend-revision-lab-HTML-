@@ -8,308 +8,311 @@
 --border-color: #e5e7eb;
 --card-shadow: 0 4px 6px-1px rgba(0,0,0,0.1);
 --transition: all 0.3s ease;
-
 }
- body {
-  background-color: #ffffff;
-  color: #1a1a1a;
-  transition: var(--background-color) 0.3s ease, var(--text-color) 0.3s ease;
- }
-
-/*Dark Mode Class Swap Target*/
 
 body.dark-mode {
-
-    --background-color: #1a1a1a;
-    --surface-color: #1e293b;
-    --text-color: #f8fafc;
-    --text-muted: #94a3b8;
-    --border-color:#334155;
-    --card-shadow: 0 4px 6px -1px rgba(0,0,0,0.5);
-    color: #ffffff;
-
-    
+  --background-color: #1a1a1a;
+  --surface-color: #1e293b;
+  --text-color: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins' sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
 }
-
 
 body {
-
-    background: #080808;
-    color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
-
-#header {
-width: 100%;
-height: 100%;
-
-}
-
-.container {
-
-    padding: 10px 10%;
-}
-
-.about {
-    padding: 80px 0px;
-    color: #ababab;
-    padding-left: 100px;
-}
-
-
-.btn:hover {
-
-    background-color: var(--primary-hover);
-    
-    transform: translateY(-2px);
-
-
-}
-
-
-
- 
-
-.project-card {
-
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-/* Navigation bar layout */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Logo on left, links on right */
-  align-items: center;            /* Perfectly centers text vertically */
-  padding: 1rem 2rem;
-  background-color: #333;
-  color: black;
-}
-
-/* Link list container layout */
-.nav-links {
-  display: flex;                  /* Arranges list items horizontally */
-  gap: 20px;                      /* Clean spacing between link items */
-  list-style: none;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-/* space out the rows inside  the form*/
-.form {
-
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.humburger btn {        /*Hamburger menu button for mobile view*/
-
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-/* For small screens*/
-
-.humburger btn {
-  display: none;
-  flex-direction: column;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  background: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-/* show menu when active*/
-
-.nav-links.active {
-  display: flex;
-}
-.form-group {
-    margin-bottom: 20px;
-    display:block;
-}
-
-.form-label {
-
-    margin-bottom: 2opx;
-    display:block;
-}
-
-
-
-.projects-card{
-  display: flex;
-  flex-wrap: wrap;       /* Allows cards to wrap into columns on mobile */
-  gap: 24px;             /* Equal spacing around all cards */
-  padding: 2rem;
-}
-
-.project-card {
-  /* grow | shrink | basis (minimum ideal width) */
-  flex: 1 1 300px;       
-  
-  /* Internal Flexbox layout to align card text content nicely */
-  display: flex;
-  flex-direction: column; 
-  gap: 10px;
-  
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-}
- /* Optional: Keep flexbox INSIDE the card to stack content vertically */
- 
- .flexbox {
- display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
 /* ==========================================================================
-   1. MOBILE DESIGN (Default styles for screens up to 480px wide)
+   NAVBAR
    ========================================================================== */
 .navbar {
   display: flex;
-  flex-direction: column;    /* Stacks logo above navigation links on mobile */
+  justify-content: space-between;
   align-items: center;
-  gap: 15px;
-  padding: 1rem;
-  background-color: #333;
+  padding: 1rem 2rem;
+  background-color: #1a1a1a;
+  color: white;
+  position: relative;
+  z-index: 100;
 }
 
-.nav-links {
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hamburger {
   display: flex;
-  flex-direction: column;    /* Stack links vertically on small mobile screens */
-  align-items: center;
-  gap: 10px;
-  padding: 0;
-  list-style: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 200;
 }
 
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==========================================================================
+   NAV LINKS (slide-in side panel on mobile)
+   ========================================================================== */
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background-color: #1a1a1a;
+  padding-top: 80px;
+  gap: 10px;
+  z-index: 150;
+  transition: right 0.3s ease-in-out;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.nav-links.active {
+  right: 0;
+}
+
+.nav-links a {
+  display: block;
+  padding: 15px 30px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 18px;
+  border-bottom: 1px solid #2a2a2a;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+#theme-toggle-btn {
+  margin: 15px 30px;
+  padding: 8px 16px;
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 14px;
+}
+
+#theme-toggle-btn:hover {
+  background: white;
+  color: #1a1a1a;
+}
+
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* ==========================================================================
+   HERO / ABOUT / SECTIONS
+   ========================================================================== */
+section {
+  padding: 2rem 1rem;
+}
+
+.hero {
+  background: black;
+  color: white;
+}
+
+.hero a {
+  color: var(--primary-color);
+}
+
+.about {
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   PROJECTS
+   ========================================================================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Force exactly 1 single full-width column */
+  grid-template-columns: 1fr;
   gap: 16px;
   padding: 1rem;
 }
 
 .project-card {
-  padding: 16px;
-  border: 1px solid #ddd;
+  padding: 20px;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ==========================================================================
+   CONTACT FORM
+   ========================================================================== */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+  border-color: #dc2626;
+}
+
+.error-message {
+  display: none;
+  color: #dc2626;
+  font-size: 14px;
+  margin-top: 6px;
 }
 
 
+.form-success-message {
+  display: none;
+  color: #16a34a;
+  font-weight: 600;
+  margin-top: 12px
+}
+
+
+.btn,
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover,
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.btn:active,
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+}
+
 /* ==========================================================================
-   2. TABLET BREAKPOINT (Screens 481px to 768px wide)
+   FOOTER
+   ========================================================================== */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+/* ==========================================================================
+   TABLET BREAKPOINT (481px and up)
    ========================================================================== */
 @media (min-width: 481px) {
-  .navbar {
-    flex-direction: row;       /* Flips logo and links into a side-by-side row */
-    justify-content: space-between;
-  }
-
-  .nav-links {
-    flex-direction: row;       /* Lines up links horizontally */
-    gap: 15px;
-  }
-
   .projects-grid {
-    grid-template-columns: repeat(2, 1fr); /* Locks layout into a 2-column grid */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     padding: 1.5rem;
   }
 }
 
 /* ==========================================================================
-   1. DEFAULT LINK & BUTTON STATES (With Transition Engines)
+   DESKTOP BREAKPOINT (769px and up)
    ========================================================================== */
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  
-  /* Smoothly animates color shifts over 0.2 seconds */
-  transition: color 0.2s ease-in-out; 
+@media (min-width: 769px) {
+  .hamburger {
+    display: none;
+  }
+
+  .nav-links {
+    position: static;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+    background: none;
+    padding-top: 0;
+    box-shadow: none;
+  }
+
+  .nav-links a {
+    border-bottom: none;
+    padding: 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-
-/* Base button styling (Add this class to your project or CTA buttons) */
-.btn-primary {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-
-  /* Animates multiple properties smoothly at the same time */
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-
-/* ==========================================================================
-   2. HOVER EFFECTS
-
-/* Subtle color fade for menu items */
-.nav-links a:hover {
-  color: #0070f3; /* Changes text to a distinct brand color on hover */
-}
-
-/* Dynamic lifting effect for action buttons */
-.btn-primary:hover {
-  background-color: #0051a8;       /* Darkens the background color */
-  transform: translateY(-2px);     /* Physically lifts the button up slightly */
-  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3); /* Adds a modern glow shadow */
-}
-
-/* Reset lifting effect when clicked */
-.btn-primary:active {
-  transform: translateY(0);        /* Pushes the button back down on click */
-  box-shadow: 0 2px 6px rgba(0, 112, 243, 0.2);
-}
-
-
-/* Subtle color fade for menu items */
-.nav-links a:hover {
-  color: var(--primary-color); /* Changes text to a distinct brand color on hover */
-}
-
-/* Dynamic lifting effect for action buttons */
-.btn-primary:hover {
-  background-color: #0051a8;       /* Darkens the background color */
-  transform: translateY(-2px);     /* Physically lifts the button up slightly */
-  box-shadow: 0 4px 12px rgba(0, 112, 243, 0.3); /* Adds a modern glow shadow */
-}
-
-/* Reset lifting effect when clicked */
-.btn-primary:active {
-  transform: translateY(0);        /* Pushes the button back down on click */
-  box-shadow: 0 2px 6px rgba(0, 112, 243, 0.2);
-}
-
-
-
-
-
-
